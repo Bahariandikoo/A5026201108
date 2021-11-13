@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('tgs4', function () {
+    return view('tugas4');
+});
+
+Route::get('prak2', function () {
+    return view('praktikum2');
+});
+
 Route::get('ets', function () {
     return view('htmlets');
 });

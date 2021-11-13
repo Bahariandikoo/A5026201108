@@ -34,6 +34,7 @@
             <div class="col">
                 <h3 style="text-align: center;">Form Input Peserta Vaksinasi</h3> <br>
                 <form  name="myForm" action="https://www.pedulilindungi.id/" class="needs-validation" novalidate>
+                    @csrf
                     <table align="center" >
                         <tr>
                             <td> <label for="nama"> Nama peserta  </label></td>

@@ -87,11 +87,11 @@
 
                 <div class="links">
                     <a href="tugas_1.html">Tugas 1 </a>
-                    <a href="">Tugas 2 </a>
-                    <a href="">Tugas 3 </a>
-                    <a href="">Praktikum 1 </a>
-                    <a href="">Tugas 4 </a>
-                    <a href="">Praktikum 2</a>
+                    <a href="tugas_2.html">Tugas 2 </a>
+                    <a href="tugas_3.html">Tugas 3 </a>
+                    <a href="praktikum1.html">Praktikum 1 </a>
+                    <a href="tgs4">Tugas 4 </a>
+                    <a href="prak2">Praktikum 2</a>
                     <a href="ets">ETS</a>
                     <a href="isiannama"> Tugas PHP </a>
 

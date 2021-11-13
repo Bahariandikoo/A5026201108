@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title> Progress Bar</title>
+
+    <style>
+      .container{
+        margin-top: 20px;
+      }
+      #title{
+        font-size: 30px;
+      }
+      .navbar{
+        background-color: #F9F7F4;
+              }
+      li{
+        margin-left: 30px;
+      }
+    </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
+      <a class="navbar-brand" href="#" id="title"> <p style=" color: #000; font-family: gotham light;">Bagus<b style="font-family: gotham semibold;">Membaca</b></p></a>
+      
+      <ul class="navbar-nav" style="margin-left: 20px; font-size: 17px;">
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: black;"> Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: black;"> Bukuku</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: black;">
+            Browse
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">recommendations</a>
+            <a class="dropdown-item" href="#">New release</a>
+            <a class="dropdown-item" href="#">List</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
+    <!-- Col 1 -->
+    <div class="row container-fluid align-content-center" style="margin-top:100px">
+      <div class="col">
+        <h2> Currently Reading</h2>
+      <p style="margin-top: 20px;">  <img src="//s.gr-assets.com/assets/react_components/currently_reading/icn_default_CR_ltrail-16f28d39654104ceb329648a474943eb.svg" > What are you reading?</p>
+      <form class="form-inline" action="/action_page.php">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-success" type="submit">Search books</button>
+      </form>
+      <!-- Col 2 -->
+      </div>
+      <div class="col gr-mediaFlexbox__media siteAnnouncement__masthead">
+        <h1> Postingan</h1>
+          <div class="card">
+            
+          <div class="card-body" style="padding: 20px;">
+            <p style="font-size: 20px; margin-bottom: -20px;">Discover the Biggest Books of Fall </p>
+          </div>
+          <div class="card-body"> 
+            <img src="https://images.gr-assets.com/misc/1627067144-1627067144_goodreads_misc.png" width="100%">
+            <p>Let us guide you to the most anticipated new reads this season!</p>
+          </div>
+          </div>
+          <br>
+          <p> <b> UPDATES </b> </p>
+          <div class="card">
+            <div class="card-body">
+              <p> <b> Yuji Itadori</b> is now friends with</p>
+              <div class="row">
+                <div class="col">
+                  <img class="rounded-circle" src="https://s.gr-assets.com/assets/nophoto/user/u_75x75-55b75e629e2c627747e0122ec1365d01.png" alt="Anisah Qotrunnada" data-reactid=".d531ny6vgc.2.0.$=1$Update_8014210198.0.1.2.0.0.0">    </div>
+                <div class="col" style="margin-left: -105px;">
+                  <p class="card-text" > <b style="font-size: 22px;">Aoi Todo</b>  </p>
+                    <button type="button" class="btn btn-secondary"> Add friend </button>
+                </div>   
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <p> <b> Gojo Suherman </b> Want to reads</p>
+              <div class="row">
+                <div class="col">
+                  <img alt="Janshen" class="d-inline-flex" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1508735597i/36461208.jpg" >
+                </div>
+                <div class="col" style="margin-left: -95px;">
+                  <p class="card-text" > <b style="font-size: 22px;">Janshen</b> <br> by Risa Saraswati</p>
+                  <button type="button" class="btn btn-success">Want to Read</button>
+                  
+                  <p class="card-text">“Risa, kau gemuk!”
+                    “Risa, aku takut hujan!”
+                    “Risa, aku benci disebut hantu!”
+                    “Risa, seandainya gigiku tak ompong!”
+                    “Risa, aku rindu Anna….”
+                    “Risa… terima kasih, biarpun kau je… <a class="u-marginLeftTiny fullContentLink" href="https://www.goodreads.com/book/show/36461208-janshen" >Continue reading</a> </p>
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 3 -->
+      <div class="col">
+        <h2> Berita & Interview </h2>
+        <a href="https://www.goodreads.com/blog/show/2112-6-great-books-hitting-shelves-this-week?int=Soapbox_2021_Sep&amp;int_sub=Blog_2112">
+          6 Great Books Hitting Shelves This Week</a>
+          <img class="gr-editorialBlogPost__image" src="https://images.gr-assets.com/blogs/1630363277p7/2112.jpg" alt="6 Great Books Hitting Shelves This Week" data-reactid=".22wtmayxwyu.0.2.0">
+          <hr>
+          <p> <b> BUKU YANG SUDAH KAMU BACA TAHUN INI</b></p>
+          <P> Reading at least 20 books improves your recommendations. You have reads 10. </P>
+          <div class="progress" style="margin-bottom: 10px;">
+            <div class="progress-bar" style="width:50%"> 10/20</div>
+          </div>
+          <a href="https://www.goodreads.com/user/rate_books" class="u-displayBlock u-marginTopXSmall" data-reactid=".12v300sj0cu.4">Reads more books</a>
+      </div>
+    </div>
+       
+</body>
+</html>

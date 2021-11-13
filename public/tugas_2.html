@@ -4,7 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baharian Diko</title>
+    <style>
+      body{
+        margin: auto;
+        width: 60%;
+        border: 10px solid #1a6bed;
+        padding: 10px;
+            }
 
+        header{
+            text-align: center;
+            background-color: #1a6bed;
+            color: white;
+        }
+
+        #linkedin:hover{
+            color: black;
+            text-decoration: none;
+        }
+
+        #linkedin{
+            color: #1a6bed;
+        }
+        footer{
+            text-align: center;
+            background-color: #1a6bed;
+            color: white;
+            padding: 10px 50px;
+        }
+
+        .btn{
+            background-color: #1a6bed ;
+            color: white;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .btn:hover{
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .container_gmbr{
+           display: flex;
+        }
+
+        p{
+            margin: 10px;
+        }
+    </style>
 </head>
 <body style="font-family: 'Segoe UI'; ">
     <header style="margin-top: -40px; margin-left: -20px; margin-right: -20px; padding: 10px;">
@@ -60,12 +118,12 @@
                     <td> Staff Publikasi dan Dokumentasi MABA CUP 2020</td>
                 </tr>
             </table>
-            <a href="www.linkedin.com/in/bahariandiko" > Linked In saya !</a>
+            <a href="www.linkedin.com/in/bahariandiko" id="linkedin"> Linked In saya !</a>
 
         </div>
         <hr>
 
-        <div>
+        <div class="container_gmbr">
             <div>
                 <h4> Pendidikan</h4>
                     <ul>
@@ -80,7 +138,7 @@
                     </ol>
             </div>
             <hr>
-            <div style="padding: 10px;" >
+            <div style="margin-left: -100px; padding: 10px;" >
                 <h5> Kritik dan saran </h5>
                 <form action="#" >
                     <label for="email"> Email </label><br>
@@ -90,13 +148,13 @@
                     <label for="kritiksaran"> Isi Kritik dan Saran </label><br>
                     <textarea></textarea>
                     <br>
-                    <button > Kirim!</button>
+                    <button class="btn"> Kirim!</button>
                     </form>
             </div>
         </div>
         <hr>
     </main>
-    <footer style="text-align: center;">
+    <footer style="text-align: center; margin: -10px;">
         Web profil Baharian Diko Copyright 2021
     </footer>
 </body>
