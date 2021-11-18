@@ -357,20 +357,13 @@
         "whimsical"=> "capricious; fanciful",
         "zealot"=> "fanatic; person who shows excessive zeal");
 
-        $definisi = isset($array[$kata]) ? $array[$kata] : "";
-        // function saring(){
-        //     global $array, $kata;
-        //     if(isset($array[$kata])){
 
-        //         $definisi = $array[$kata];
-        //         echo $definisi;
 
-        //         }else{
-
-        //             $definisi = $array[$kata];
-        //         echo $definisi;
-        //         }
-
+        function saring(){
+            global $array, $kata;
+            $definisi = isset($array[$kata]) ? $array[$kata] : "gk ada";
+            echo $definisi;
+            }
     ?>
 <body class="bg-primary">
 
@@ -393,7 +386,7 @@
                         <div class="card">
                             <h5 class="card-header"> Definisi </h5>
                             <div class="card-body">
-                               <h2> <?php echo $definisi; //saring();?> </h1>
+                               <h2> <?php saring() ?> </h1>
                             </div>
                         </div>
                     </div>
