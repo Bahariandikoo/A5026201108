@@ -361,7 +361,7 @@
 
         function saring(){
             global $array, $kata;
-            $definisi = isset($array[$kata]) ? $array[$kata] : "gk ada";
+            $definisi = isset($array[$kata]) ? $array[$kata] : "Tidak ada kata dalam Kamus GRE";
             echo $definisi;
             }
     ?>
