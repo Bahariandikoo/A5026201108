@@ -23,10 +23,11 @@ Route::get('prak2', function () {
     return view('praktikum2');
 });
 
-Route::get('ets', function () {
-    return view('htmlets');
-});
+Route::get('ets',"ViewController@showVaccineForm") ;
 
 Route::get('isiannama',"ViewController@showForm") ;
 Route::post('greetings',"ViewController@resultGreetings");
 
+
+Route::get('kamusGRE',"ViewController@showKamusGRE") ;
+Route::post('definisiGRE',"ViewController@resultDefinisi");

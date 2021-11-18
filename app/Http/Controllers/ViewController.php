@@ -18,4 +18,12 @@ class ViewController extends Controller
     function resultGreetings(){
         return view('tugas');
     }
+
+    function showKamusGRE(){
+        return view('kamus');
+    }
+
+    function resultDefinisi(){
+        return view('definisi');
+    }
 }

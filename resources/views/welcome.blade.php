@@ -93,7 +93,7 @@
                     <a href="tgs4">Tugas 4 </a>
                     <a href="prak2">Praktikum 2</a>
                     <a href="ets">ETS</a>
-                    <a href="isiannama"> Tugas PHP </a>
+                    <a href="kamusGRE"> Tugas PHP </a>
 
                 </div>
             </div>

@@ -43,7 +43,7 @@
 <body>
     <div class="container mt-3 mb-3 shadow-lg">
 
-        <form name="RegistrationForm" action="greetings" method="post" onsubmit="return FormInput()" >
+        <form name="RegistrationForm" action="greetings" method="post"  >
             @csrf
             <center><h1>GET TO KNOW YOU</h1></center>
 
