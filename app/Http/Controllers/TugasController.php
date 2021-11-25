@@ -59,14 +59,13 @@ class TugasController extends Controller
             return redirect('/tugas');
         }
 
-        // method untuk hapus data pegawai
+        // method untuk hapus data tugas pegawai
         public function hapus($id)
         {
-            // menghapus data pegawai berdasarkan id yang dipilih
+            // menghapus data tugas pegawai berdasarkan id yang dipilih
             DB::table('tugas')->where('ID',$id)->delete();
 
             // alihkan halaman ke halaman pegawai
             return redirect('/tugas');
-
-}
+        }
 }

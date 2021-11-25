@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-	<h3>Data Tugas Mahasiswa Pemograman WEB Kelas A</h3>
+	<h3>Update Data Tugas Pegawai</h3>
 
 	<a href="/tugas"> Kembali</a>
 
@@ -30,8 +30,8 @@
         <input type="text" name="namatugas" required="required" value="{{$p->NamaTugas}}" class="input"> <br/>
 
 		Status <br>
-        <select name="status" value="option_select" class="input">
-            <option value="{{$p->ID}}">{{ $p->Status}}</option>
+        <select name="status" value="option_select" class="input" required>
+            <option selected disabled value="">{{ $p->Status}}</option>
             <option value="Y">Y</option>
             <option value="N">N</option>
         </select>
