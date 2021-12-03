@@ -15,7 +15,7 @@
 
 	@foreach($pegawai as $p)
 	<form action="/pegawai/update" method="post">
-		{{ csrf_field() }}
+		@csrf
 		<input type="hidden" name="id" value="{{ $p->pegawai_id }}"> <br/>
 		Nama <input type="text" required="required" name="nama" value="{{ $p->pegawai_nama }}"> <br/>
 		Jabatan <input type="text" required="required" name="jabatan" value="{{ $p->pegawai_jabatan }}"> <br/>
