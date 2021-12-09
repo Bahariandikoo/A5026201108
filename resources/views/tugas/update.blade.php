@@ -1,55 +1,74 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
 
-    <style>
-        .input{
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-	<h3>Update Data Tugas Pegawai</h3>
+    @extends('layout.bahagia')
 
-	<a href="/tugas"> Kembali</a>
+    @section('title', 'Data Pegawai')
+
+    @section('judulhalaman', 'Update Tugas Pegawai')
+
+    @section('konten')
+
+	<a href="/tugas"> << Kembali</a>
 
 	<br/>
-	<br/>
-    @foreach($tugas as $p)
+    @foreach($tugas as $a)
 	<form action="/tugas/update" method="post">
 		@csrf
-        <input type="hidden" name="ID" value="{{ $p->ID }}"> <br/>
+        <input type="hidden" name="ID" value="{{ $a->ID }}"> <br/>
 
-		ID Pegawai <br>
-        <input type="text" name="IDPegawai" required="required" value="{{$p->IDPegawai}}" class="input"> <br/>
+		<div class="form-group row">
+            <div class="col-xs-3">
+                <label for="idpegawai"> IDPegawai </label>
+                <select class="form-control" name="IDPegawai" >
+                    @foreach($pegawai as $p)
+                     <option value="{{ $p->pegawai_id }}" @if ($p->pegawai_id === $a->IDPegawai ) selected="selected" @endif>{{ $p->pegawai_nama }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+		<div class="form-group">
+            <label for="dtpickerdemo" class="control-label">Tanggal :</label>
+            <div class='col-sm-4 input-group date ' id='dtpickerdemo'>
+                <input type='text' class="form-control" name="tanggal" value="{{ $a->Tanggal }}" required="required" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function() {
+                $('#dtpickerdemo').datetimepicker({
+                    format: 'YYYY-MM-DD hh:mm:ss',
+                    showTodayButton: false,
+                    locale : 'id',
+                    "defaultDate": new Date(),
+                });
+            });
+        </script>
 
-		Tanggal <br>
-        <input type="datetime-local" name="tanggal" required="required" value="{{ date('Y-m-d\TH:i', strtotime($p->Tanggal)) }}" class="input"> <br/>
-		Nama Tugas <br>
-        <input type="text" name="namatugas" required="required" value="{{$p->NamaTugas}}" class="input"> <br/>
+        <div class="form-group row">
+            <div class="col-xs-3">
+                <label for="tugas">Nama Tugas</label>
+                <input class="form-control" type="text" name="namatugas" value="{{$a->NamaTugas}}" required="required" class="input">
+            </div>
+        </div>
 
-		Status <br>
-        <select name="status" value="option_select" class="input" required>
-            <option selected disabled value="">{{ $p->Status}}</option>
-            <option value="Y">Y</option>
-            <option value="N">N</option>
-        </select>
+		<div class="form-group row">
+            <div class="col-xs-1">
+                <label for="status"> Status </label>
+                <select class="form-control" name="status" class="input">
+                    <option value="Y"
+                     @if ( $a->Status === "Y")  selected="selected"
+                    @endif>Y</option>
+                    <option value="N" @if ( $a->Status === "N")  selected="selected"
+                        @endif>N</option>
+                </select>
+            </div>
+        </div>
 
-        <br> <br>
+        <br>
 
 		<input type="submit" value="Update Data">
 	</form>
     @endforeach
 
-</body>
-</html>
-
-{{-- @foreach($tugas as $p)
-	<form action="/tugas/update" method="post">
-		@csrf
-		<input type="hidden" name="id" value="{{ $p->ID }}"> <br/>
-		Nama <input type="text" required="required" name="namatugas" value="{{ $p->NamaTugas }}"> <br/>
-		<input type="submit" value="Simpan Data">
-	</form>
-	@endforeach --}}
+@endsection

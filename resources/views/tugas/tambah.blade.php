@@ -1,43 +1,71 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tambah Data</title>
+@extends('layout.bahagia')
 
-    <style>
-        .input{
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-	<h3>Data Tugas Pegawai</h3>
+@section('title', 'Data Pegawai')
 
-	<a href="/tugas"> Kembali</a>
+@section('judulhalaman', 'Tambah Tugas Pegawai')
+
+@section('konten')
+
+    <a href="/tugas"> << Kembali</a>
 
 	<br/>
 	<br/>
 
 	<form action="/tugas/input" method="post">
 		@csrf
-		ID Pegawai <br>
-        <input type="text" name="IDPegawai" required="required" class="input"> <br/>
+		<div class="form-group row">
+            <div class="col-xs-3">
+             <label for="">IDPegawai</label>
+                <select class="form-control" name="IDPegawai" >
+                    @foreach($pegawai as $p)
+                     <option value="{{ $p->pegawai_id }}">{{ $p->pegawai_nama }} {{ $p->pegawai_id }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
 
-		Tanggal <br>
-        <input type="datetime-local" name="tanggal" required="required" class="input"> <br/>
+		<label for="tanggal"> Tanggal </label>
+        <div class="row">
+            <div class='col-sm-3'>
+               <div class="form-group">
+                  <div class='input-group date' id='datetimepicker2'>
+                     <input type='text' name="tanggal" required  class="form-control" />
+                     <span class="input-group-addon">
+                     <span class="glyphicon glyphicon-calendar"></span>
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <script type="text/javascript">
+               $(function () {
+                   $('#datetimepicker2').datetimepicker({
+                    format: 'YYYY-MM-DD hh:mm:ss',
+                    showTodayButton: false,
+                    locale : 'id',
+                    "defaultDate": new Date(),
+                   });
+               });
+            </script>
+         </div>
 
-		Nama Tugas <br>
-        <input type="text" name="namatugas" required="required" class="input"> <br/>
+        <div class="form-group row">
+            <div class="col-xs-3">
+                <label for="tugas">Nama Tugas</label>
+                <input class="form-control" type="text" name="namatugas" required="required" class="input">
+            </div>
+        </div>
 
-		Status <br>
-        <select name="status" class="input">
-            <option value="Y">Y</option>
-            <option value="N">N</option>
-        </select>
+        <div class="form-group row">
+            <div class="col-xs-1">
+                <label for="status"> Status </label>
+                <select class="form-control" name="status" class="input">
+                    <option value="Y">Y</option>
+                    <option value="N">N</option>
+                </select>
+            </div>
+        </div>
 
-        <br> <br>
-
-		<input type="submit" value="Simpan Data">
+		<button type="submit" class="btn btn-primary"> + Tambah Data</button>
 	</form>
 
-</body>
-</html>
+@endsection

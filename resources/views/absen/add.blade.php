@@ -6,17 +6,26 @@
    @section('judulhalaman', 'Menambah Data Absen')
 
    @section('konten')
+
+   <p> <a href="/absen"><< Kembali</a></p>
     <form action="/absen/store" method="post">
         @csrf
 
-        IDPegawai <select name="idpegawai" >
-    @foreach($pegawai as $p)
-     <option value="{{ $p->pegawai_id }}">{{ $p->pegawai_nama }}</option>
-    @endforeach
-</select>
-<br>
+
+
+<div class="form-group row">
+    <div class="col-xs-3">
+     <label for="">IDPegawai</label>
+        <select class="form-control" name="idpegawai" >
+            @foreach($pegawai as $p)
+             <option value="{{ $p->pegawai_id }}">{{ $p->pegawai_nama }}</option>
+            @endforeach
+        </select>
+    </div>
+</div>
+
         <div class="form-group">
-            <label for="dtpickerdemo" class="col-sm-2 control-label">Tanggal :</label>
+            <label for="dtpickerdemo" class=" control-label">Tanggal :</label>
             <div class='col-sm-4 input-group date ' id='dtpickerdemo'>
                 <input type='text' class="form-control" name="tanggal" required="required" />
                 <span class="input-group-addon">
@@ -35,6 +44,7 @@
             });
         </script>
 
+
         Status <br />
         <input type="radio" id="html" name="status" value="I">
         <label for="html">Izin</label><br>
@@ -43,7 +53,6 @@
         <input type="radio" id="javascript" name="status" value="A">
         <label for="javascript">Alpha</label>
 
-        <p><input type="submit" value="Simpan Data"></p>
+        <button type="submit" class="btn btn-primary"> + Tambah Data</button>
     </form>
-    <p> <a href="/absen"> Kembali</a></p>
 @endsection

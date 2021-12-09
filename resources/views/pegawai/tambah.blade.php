@@ -1,26 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
+@extends('layout.bahagia')
 
-	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
-	<h3>Data Pegawai</h3>
+   @section('title', 'Data Pegawai')
 
-	<a href="/pegawai"> Kembali</a>
+   @section('judulhalaman', 'Tambah Pegawai')
+
+   @section('konten')
+	<a href="/pegawai"><< Kembali</a>
 
 	<br/>
 	<br/>
 
-	<form action="/pegawai/store" method="post">
-		{{ csrf_field() }}
-		Nama <input type="text" name="nama" required="required"> <br/>
-		Jabatan <input type="text" name="jabatan" required="required"> <br/>
-		Umur <input type="number" name="umur" required="required"> <br/>
-		Alamat <textarea name="alamat" required="required"></textarea> <br/>
-		<input type="submit" value="Simpan Data">
+	<form class="form-group" action="/pegawai/store" method="post">
+		@csrf
+        <div class="row">
+            <div class="form-group col-sm-5">
+                <label for="nama">Nama</label>
+            <input class="form-control" type="text" name="nama" required="required">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-5">
+               <label for="jabatan">Jabatan</label>
+            <input class="form-control" type="text" name="jabatan" required="required">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-5">
+                <label for="umur">Umur</label>
+            <input class="form-control" type="number" name="umur" required="required">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-5">
+               <label for="alamat">Alamat</label>
+            <textarea class="form-control" name="alamat" required="required"></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary"> + Tambah Data</button>
 	</form>
-
-</body>
-</html>
+@endsection

@@ -19,7 +19,11 @@ class TugasController extends Controller
     }
 
     public function tambah(){
-        return view('tugas.tambah');
+         // mengambil data dari table pegawai
+         $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get(); //defaultnya urut Primary Key
+
+         // memanggil view add
+         return view('tugas.tambah', ['pegawai' => $pegawai]);
     }
 
     public function input(Request $request){
@@ -39,9 +43,12 @@ class TugasController extends Controller
             // mengambil data pegawai berdasarkan id yang dipilih
             $tugas = DB::table('tugas')->where('ID',$id)->get();
 
+              // mengambil data dari table pegawai
+        $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get(); //defaultnya urut Primary Key
+
             // passing data pegawai yang didapat ke view edit.blade.php
             // return Carbon::parse($id)->format('Y-m-d\TH:i');
-            return view('tugas.update',['tugas' => $tugas]);
+            return view('tugas.update',['tugas' => $tugas,'pegawai'=> $pegawai]);
 
         }
 
