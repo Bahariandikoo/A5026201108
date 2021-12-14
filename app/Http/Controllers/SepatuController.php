@@ -6,41 +6,40 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
-class PegawaiController extends Controller
+class SepatuController extends Controller
 {
     public function index()
     {
     	// mengambil data dari table pegawai
-    	$pegawai = DB::table('pegawai')->paginate(10);
+    	$sepatu = DB::table('sepatu')->paginate(10);
 
     	// mengirim data pegawai ke view index
-    	return view('pegawai.index',['pegawai' => $pegawai]);
+    	return view('sepatu.index',['sepatu' => $sepatu]);
 
     }
 
     public function tambah(){
-        return view('pegawai.tambah');
+        return view('sepatu.tambah');
     }
 
     public function store(Request $request){
-        DB::table('pegawai')->insert([
-            'pegawai_nama' => $request->nama,
-            'pegawai_jabatan' => $request->jabatan,
-            'pegawai_umur' => $request->umur,
-            'pegawai_alamat' => $request->alamat
+        DB::table('sepatu')->insert([
+            'merksepatu' => $request->merk,
+            'stocksepatu' => $request->stock,
+            'tersedia' => $request->tersedia
         ]);
 
-        return redirect('/pegawai');
+        return redirect('/sepatu');
     }
 
     // method untuk edit data pegawai
         public function edit($id)
         {
             // mengambil data pegawai berdasarkan id yang dipilih
-            $pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
+            $sepatu = DB::table('sepatu')->where('kodesepatu',$id)->get();
 
             // passing data pegawai yang didapat ke view edit.blade.php
-            return view('pegawai.edit',['pegawai' => $pegawai]);
+            return view('sepatu.edit',['sepatu' => $sepatu]);
 
         }
 
@@ -48,9 +47,10 @@ class PegawaiController extends Controller
    public function detail($id)
    {
 	   // mengambil data pegawai berdasarkan id yang dipilih
-	   $pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
+       $sepatu = DB::table('sepatu')->where('kodesepatu',$id)->get();
+
 	   // passing data pegawai yang didapat ke view detail.blade.php
-	   return view('pegawai.detail',['pegawai' => $pegawai]);
+	   return view('sepatu.detail',['sepatu' => $sepatu]);
 
    }
 
@@ -58,24 +58,24 @@ class PegawaiController extends Controller
         public function update(Request $request)
         {
             // update data pegawai
-            DB::table('pegawai')->where('pegawai_id',$request->id)->update([
-                'pegawai_nama' => $request->nama,
-                'pegawai_jabatan' => $request->jabatan,
-                'pegawai_umur' => $request->umur,
-                'pegawai_alamat' => $request->alamat
+            DB::table('sepatu')->where('kodesepatu',$request->kode)->update([
+                'kodesepatu' => $request->kode,
+                'merksepatu' => $request->merk,
+                'stocksepatu' => $request->stock,
+                'tersedia' => $request->tersedia
             ]);
             // alihkan halaman ke halaman pegawai
-            return redirect('/pegawai');
+            return redirect('/sepatu');
         }
 
         // method untuk hapus data pegawai
         public function hapus($id)
         {
             // menghapus data pegawai berdasarkan id yang dipilih
-            DB::table('pegawai')->where('pegawai_id',$id)->delete();
+            DB::table('sepatu')->where('kodesepatu',$id)->delete();
 
             // alihkan halaman ke halaman pegawai
-            return redirect('/pegawai');
+            return redirect('/sepatu');
         }
 
         //method untuk cari data pegawai
@@ -85,12 +85,12 @@ class PegawaiController extends Controller
             $cari = $request->cari;
 
                 // mengambil data dari table pegawai sesuai pencarian data
-            $pegawai = DB::table('pegawai')->where('pegawai_nama','like',"%".$cari."%")
-            -> orwhere('pegawai_alamat','like',"%".$cari."%")
+            $sepatu = DB::table('sepatu')->where('merksepatu','like',"%".$cari."%")
+            -> orwhere('kodesepatu','like',"%".$cari."%")
             ->paginate();
 
                 // mengirim data pegawai ke view index
-            return view('pegawai.index',['pegawai' => $pegawai]);
+            return view('sepatu.index',['sepatu' => $sepatu]);
 
         }
 }

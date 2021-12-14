@@ -64,8 +64,7 @@ a{
             <a href="/pegawai">Pegawai</a>
             <a href="/absen">Absen</a>
             <a href="/tugas">Tugas</a>
-            <a href="#">Minggu Depan</a>
-            <a href="#">Praktikum</a>
+            <a href="/sepatu">Sepatu</a>
         </div>
 
         <!-- Page content -->

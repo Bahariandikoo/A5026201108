@@ -21,7 +21,7 @@
         <div class="row">
             <div class="form-group col-sm-5">
                <label for="jabatan">Jabatan</label>
-            <input class="form-control" type="text" name="jabatan" required="required">
+            <input class="form-control" maxlength="20" type="text" name="jabatan" required="required">
             </div>
         </div>
         <div class="row">

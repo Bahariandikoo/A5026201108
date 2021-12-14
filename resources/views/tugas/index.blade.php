@@ -9,7 +9,7 @@
 <a class="btn btn-primary" href="/tugas/tambah"> + Tambah Data Baru</a> <br> <br>
 <table class="table table-hover" >
     <tr>
-        <td> ID Pegawai </td>
+        <td> Nama Pegawai </td>
         <td> Tanggal </td>
         <td> Nama Tugas </td>
         <td> Status </td>
@@ -17,7 +17,7 @@
     </tr>
     @foreach($tugas as $p)
 	    <tr>
-			<td>{{ $p->IDPegawai }}</td>
+			<td>{{ $p->pegawai_nama }}</td>
 			<td>{{ $p->Tanggal }}</td>
 			<td>{{ $p->NamaTugas }}</td>
             <td>{{ $p->Status }}</td>

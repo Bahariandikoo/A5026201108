@@ -25,7 +25,7 @@
         <div class="row">
             <div class="form-group col-sm-5">
                <label for="jabatan">Jabatan</label>
-                <input type="text" class="form-control" required="required" name="jabatan" value="{{ $p->pegawai_jabatan }}">
+                <input type="text" maxlength="20" class="form-control" required="required" name="jabatan" value="{{ $p->pegawai_jabatan }}">
             </div>
         </div>
         <div class="row">

@@ -43,6 +43,11 @@ Route::post('/pegawai/update','PegawaiController@update');
 
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
 
+Route::get('/pegawai/detail/{id}','PegawaiController@detail');
+
+//route cari pegawai
+Route::get('/pegawai/cari','PegawaiController@cari');
+
 //route CRUD Tugas
 
 //Lihat Index (Data Tabel Tugas Mahasiswa)
@@ -67,3 +72,19 @@ Route::post('/absen/store','AbsenController@store');
 Route::get('/absen/edit/{id}','AbsenController@edit');
 Route::post('/absen/update','AbsenController@update');
 Route::get('/absen/hapus/{id}','AbsenController@hapus');
+
+//route CRUD Pegawai
+Route::get('/sepatu','SepatuController@index');
+
+Route::get('/sepatu/tambah','SepatuController@tambah');
+Route::post('/sepatu/store','SepatuController@store');
+
+Route::get('/sepatu/edit/{id}','SepatuController@edit');
+Route::post('/sepatu/update','SepatuController@update');
+
+Route::get('/sepatu/hapus/{id}','SepatuController@hapus');
+
+Route::get('/sepatu/detail/{id}','SepatuController@detail');
+
+//route cari pegawai
+Route::get('/sepatu/cari','SepatuController@cari');
