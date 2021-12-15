@@ -20,8 +20,8 @@
         <td>{{ $p->ID }}</td>
         <td>{{ $p->KodeBarang }}</td>
         <td>{{ $p->Jumlah }}</td>
-        <td>{{ $p->Harga }}</td>
-        <td>{{ $p->Jumlah*$p->Harga }}</td>
+        <td>{{ number_format($p->Harga)}}</td>
+        <td>{{ number_format($p->Jumlah*$p->Harga) }}</td>
         <td>
             <a class="btn-sm btn-primary" role="button" href="/keranjang/tambah"> Beli </a>
             |
@@ -31,6 +31,5 @@
     @endforeach
 	</table>
 <br>
-
 
     @endsection

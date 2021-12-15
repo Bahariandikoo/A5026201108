@@ -32,4 +32,13 @@ class KeranjangController extends Controller
         return redirect('/keranjang');
     }
 
+    public function hapus($id)
+    {
+        // menghapus data pegawai berdasarkan id yang dipilih
+        DB::table('keranjangbelanja')->where('ID',$id)->delete();
+
+        // alihkan halaman ke halaman pegawai
+        return redirect('/keranjang');
+    }
+
 }
