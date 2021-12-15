@@ -73,7 +73,7 @@ Route::get('/absen/edit/{id}','AbsenController@edit');
 Route::post('/absen/update','AbsenController@update');
 Route::get('/absen/hapus/{id}','AbsenController@hapus');
 
-//route CRUD Pegawai
+//route CRUD Sepatu
 Route::get('/sepatu','SepatuController@index');
 
 Route::get('/sepatu/tambah','SepatuController@tambah');
@@ -88,3 +88,11 @@ Route::get('/sepatu/detail/{id}','SepatuController@detail');
 
 //route cari pegawai
 Route::get('/sepatu/cari','SepatuController@cari');
+
+//Route Keranjang Belanja
+Route::get('/keranjang','KeranjangController@index');
+
+Route::get('/keranjang/tambah','KeranjangController@tambah');
+Route::post('/keranjang/store','KeranjangController@store');
+
+Route::get('/keranjang/hapus/{id}','KeranjangController@hapus');

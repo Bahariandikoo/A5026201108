@@ -65,6 +65,7 @@ a{
             <a href="/absen">Absen</a>
             <a href="/tugas">Tugas</a>
             <a href="/sepatu">Sepatu</a>
+            <a href="/keranjang">Keranjang</a>
         </div>
 
         <!-- Page content -->
